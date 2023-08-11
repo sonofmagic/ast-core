@@ -63,6 +63,15 @@ importers:
         specifier: ^0.34.1
         version: 0.34.1
 
+  packages/escape:
+    devDependencies:
+      '@types/punycode':
+        specifier: ^2.1.0
+        version: 2.1.0
+      punycode:
+        specifier: ^2.3.0
+        version: 2.3.0
+
   packages/foo: {}
 
 packages:
@@ -1232,6 +1241,10 @@ packages:
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/punycode@2.1.0:
+    resolution: {integrity: sha512-PG5aLpW6PJOeV2fHRslP4IOMWn+G+Uq8CfnyJ+PDS8ndCbU+soO+fB3NKCKo0p/Jh2Y4aPaiQZsrOXFdzpcA6g==}
     dev: true
 
   /@types/resolve@1.20.2:

@@ -1,5 +1,5 @@
 {
-  "name": "pnpm-turbo-monorepo-template",
+  "name": "ast-core",
   "version": "0.0.1",
   "private": true,
   "workspaces": [

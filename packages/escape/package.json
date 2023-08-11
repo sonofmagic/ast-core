@@ -1,16 +1,20 @@
 {
-  "name": "@icebreakers/foo",
-  "version": "0.0.3",
-  "description": "my foo your bar pkg",
+  "name": "@ast-core/escape",
+  "version": "1.0.0",
+  "description": "ast escape function utils",
   "scripts": {
     "build": "unbuild",
-    "test": "vitest run",
+    "test": "vitest run --coverage.enabled",
     "test:dev": "vitest",
     "release": "pnpm publish"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "ast",
+    "core",
+    "escape"
+  ],
+  "author": "SonOfMagic <qq1324318532@gmail.com>",
+  "license": "MIT",
   "sideEffects": false,
   "type": "commonjs",
   "exports": {
@@ -29,5 +33,9 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@types/punycode": "^2.1.0",
+    "punycode": "^2.3.0"
   }
 }
