@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`babel > case0 1`] = `
+"const a = '12\\\\n34'
+const b = \\"12\\\\n34\\"
+const c = \`12\\\\n34\`"
+`;

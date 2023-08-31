@@ -31,6 +31,7 @@ describe('index', () => {
     expect(jsStringEscape(null)).toBe('null')
     expect(jsStringEscape(undefined)).toBe('undefined')
     expect(jsStringEscape(false)).toBe('false')
+    expect(jsStringEscape(true)).toBe('true')
     expect(jsStringEscape(0)).toBe('0')
     expect(jsStringEscape({})).toBe('[object Object]')
     expect(jsStringEscape('')).toBe('')
