@@ -18,19 +18,24 @@
     "sync": "cnpm sync @ast-core/escape"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.11",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "@types/babel__core": "^7.20.1",
-    "@types/lodash-es": "^4.17.8",
+    "@types/lodash-es": "^4.17.9",
     "@types/node": "^20.5.7",
+    "@types/punycode": "^2.1.0",
     "@vitest/coverage-v8": "^0.34.3",
+    "@weapp-core/escape": "^2.0.0",
     "eslint": "^8.48.0",
     "eslint-config-icebreaker": "^1.2.2",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "lodash-es": "^4.17.21",
+    "magic-string": "^0.30.3",
     "only-allow": "^1.1.1",
     "prettier": "^3.0.3",
+    "punycode": "^2.3.0",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "turbo": "^1.10.13",
@@ -45,9 +50,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  },
-  "dependencies": {
-    "@babel/core": "^7.22.11",
-    "magic-string": "^0.30.3"
   }
 }
