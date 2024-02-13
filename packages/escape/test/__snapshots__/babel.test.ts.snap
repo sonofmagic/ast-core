@@ -1,13 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`babel > case0 1`] = `
-"const a = '12\\\\n34'
-const b = \\"12\\\\n34\\"
-const c = \`12\\\\n34\`"
+"const a = '12\\n34'
+const b = "12\\n34"
+const c = \`12\\n34\`"
 `;
 
 exports[`babel > case1 1`] = `
-"const a = '\\\\'\\\\\\"\\\\\\"12\\\\n34'
-// const b = \\"'1\\\\'\\\\\\"\\\\r2\\\\n34\\"
-const c = \`'1'\\\\n\\\\t\${a}2\\\\n\\"34\\"\`"
+"const a = '\\'\\"\\"12\\n34'
+// const b = "'1\\'\\"\\r2\\n34"
+const c = \`'1'\\n\\t\${a}2\\n"34"\`"
 `;
