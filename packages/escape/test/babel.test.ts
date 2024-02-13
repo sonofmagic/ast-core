@@ -12,7 +12,7 @@ describe('babel', () => {
       const a = arr[i];
       for (let j = i + 1; j < arr.length; j++) {
         const b = arr[j];
-        console.log(a, b)
+        // console.log(a, b)
         expect(a).toBe(b)
       }
     }
@@ -85,5 +85,39 @@ describe('babel', () => {
     await fs.writeFile(path.resolve(__dirname, './fixtures/case1.out.js'), ms, 'utf8')
     // expect(ms).toEqual(code)
     expect('\'"\"12\n34').toBe('\'\"\"12\n34')
+  })
+
+  it('case2', async () => {
+    const inputPath = path.resolve(__dirname, './fixtures/case2.js')
+    const code = await fs.readFile(inputPath, 'utf8')
+    const s = new MagicString(code)
+    await babel.transformAsync(code, {
+      plugins: [
+        {
+          visitor: {
+            StringLiteral(p) {
+              if (p.node.start && p.node.end && p.node.start > -1 && p.node.end > -1) {
+                // const v = s.slice(p.node.start + 1, p.node.end - 1)
+               
+                s.update(p.node.start + 1, p.node.end - 1, jsStringEscape(p.node.value))
+              }
+            },
+            TemplateElement(p) {
+              if (p.node.start && p.node.end && p.node.start > -1 && p.node.end > -1) {
+                const v = s.slice(p.node.start, p.node.end)
+                s.update(p.node.start, p.node.end, v) // jsStringEscape(v))
+                
+              }
+            }
+          }
+        }
+      ]
+    })
+    const ms = s.toString()
+    const outputPath = path.resolve(__dirname, './fixtures/case2.out.js')
+    await fs.writeFile(outputPath, ms, 'utf8')
+    expect(require(inputPath)).toEqual(require(outputPath))
+    // expect(ms).toEqual(code)
+    // expect(ms).toBe(code)
   })
 })
